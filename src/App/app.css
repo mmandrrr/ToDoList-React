@@ -1,0 +1,11 @@
+.app_container {
+  margin: 0 auto;
+  max-width: 400px;
+  margin-top: 50px;
+  box-shadow: 15.9651px 11.7144px 53.3733px rgba(0, 0, 0, 0.2);
+  padding-bottom: 47px;
+}
+
+.app_top-border {
+  margin-bottom: 27px;
+}

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=DM+Sans:wght@400;500;700&family=Heebo&family=Inter:wght@400;700&display=swap');
+
+
+.goal_item {
+    max-width: 350px;
+    padding-left: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+.goal_item:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+.goal_item-checbox {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #413F3F;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.goal_item-checbox:hover {
+    cursor: pointer;
+}
+
+.goal_item-checbox {
+    width: 20px;
+    height: 20px;
+    border-color: inherit;
+    border: 2px solid #C4C4C4;
+    border-radius: 6px;
+}
+
+.goal_item-checbox-checked {
+    position: absolute;
+}
+
+.showed {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
