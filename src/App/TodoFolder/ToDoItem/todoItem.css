@@ -36,12 +36,23 @@
 
 .goal_item-checbox-checked {
     position: absolute;
+    display: none;
+}
+
+.goal_item-text {
+    transition: all ease 0.5s;
+}
+
+.goal_item-checbox-checked:hover {
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #C4C4C4;
 }
 
 .showed {
     display: block;
 }
 
-.hide {
-    display: none;
-}
