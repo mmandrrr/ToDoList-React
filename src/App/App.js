@@ -24,6 +24,12 @@ class App extends Component {
     }
   }
 
+  removeTask = (e,arr) => {
+      let index = e.target.parentElement.getAttribute('data-id')
+      this.setState({
+        taskArr : arr.splice(index,1)
+      })
+  }
 
   render() {
     return (
@@ -34,9 +40,11 @@ class App extends Component {
             {this.state.data.map(element => {
               return <TodoFolder 
                   title = {element.name} 
+                  id={element.id}
                   key = {element.id}
                   tasksArr = {element.taskArr}
                   addTask = {this.addTask}
+                  removeTask = {this.removeTask}
               />
             })}
           </div>

@@ -2,6 +2,7 @@ import { Component } from 'react';
 
 import './todoItem.css';
 import checked from '../../../img/checkMark.svg'
+import deleteIcon from '../../../img/delete-stop-svgrepo-com.svg'
 
 class TodoItem extends Component {
     constructor(props) {
@@ -17,7 +18,6 @@ class TodoItem extends Component {
             checkBoxClasses : this.state.checkBoxClasses + ' showed',
             itemTextClasses : this.state.itemTextClasses + ' done'
         })
-        console.log(this.state.checkBoxClasses);
     }
 
     onCheckCheckedBox = () => {
@@ -30,7 +30,13 @@ class TodoItem extends Component {
 
     render() {
         return(
-            <div className="goal_item">
+            <div data-id={this.props.id} className="goal_item">
+                <img 
+                    src={deleteIcon} 
+                    alt="delete-btn" 
+                    className="goal_delete-btn"  
+                    onClick={(e) => this.props.removeTask(e,this.props.tasksArr)}  
+                />
                 <div
                     onClick={this.onCheckUncheckedBox} 
                     className="goal_item-checbox"

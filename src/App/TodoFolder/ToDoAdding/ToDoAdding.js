@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react'
 import { Component } from 'react'
 
 import './todoAdding.css'
@@ -43,10 +42,12 @@ class ToDoAdding extends Component  {
                     type="text" className="goal_add-input" 
                     placeholder="Write a task..." 
                     value={this.state.value}/>
-                <button onClick={() => {
-                    this.props.addTask(this.props.tasksArr,this.state.value)
-                    this.clearInput()
-                }}>Click</button>
+                <div
+                    className='goal_add-btn'
+                    onClick={() => {
+                        this.props.addTask(this.props.tasksArr,this.state.value)
+                        this.clearInput()
+                }}>Add</div>
             </div>
         )
     }

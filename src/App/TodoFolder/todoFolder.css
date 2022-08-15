@@ -39,3 +39,11 @@
     line-height: 20px;
     background-color: #000;
 }
+
+.goal_folder-arrow:hover {
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
