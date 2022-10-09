@@ -40,7 +40,19 @@
     background-color: #000;
 }
 
+.goal_folder-arrow , .goal_folder-arrow-reverse {
+    height: 8px;
+}
+
 .goal_folder-arrow:hover {
+    cursor: pointer;
+}
+
+.goal_folder-arrow-reverse {
+    transform: rotate(180deg);
+}
+
+.goal_folder-arrow-reverse:hover {
     cursor: pointer;
 }
 

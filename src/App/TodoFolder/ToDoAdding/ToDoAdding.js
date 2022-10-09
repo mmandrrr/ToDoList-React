@@ -1,28 +1,21 @@
-import { Component } from 'react'
-
+import { useState } from 'react'
 import './todoAdding.css'
 
-class ToDoAdding extends Component  {
-    constructor(props) {
-        super(props)
-        this.state = {
-            value : ''
-        }
+const ToDoAdding = (props) =>  {
+
+    const [value, setValue] = useState('')
+
+    const inputValue = (e) => {
+        const newValue = e.target.value
+        setValue(newValue)
     }
 
-    inputValue = (e) => {
-        this.setState({
-            value : e.target.value
-        })
+    const clearInput = () => {
+        const newValue = ""
+        setValue(newValue)
     }
 
-    clearInput = () => {
-        this.setState({
-            value:""
-        })
-    }
-
-    onEnterPress = (e,result) => {
+    const onEnterPress = (e,result) => {
         if(e.code === 'Enter') {
             result()
         } else {
@@ -30,27 +23,25 @@ class ToDoAdding extends Component  {
         }
     }
 
-    render() {
-        return(
-            <div className="goal_add">
-                <input 
-                    onKeyDown={(e) => this.onEnterPress(e,() => {
-                    this.props.addTask(this.props.tasksArr,this.state.value)
-                    this.clearInput()
-                })}
-                    onChange={this.inputValue} 
-                    type="text" className="goal_add-input" 
-                    placeholder="Write a task..." 
-                    value={this.state.value}/>
-                <div
-                    className='goal_add-btn'
-                    onClick={() => {
-                        this.props.addTask(this.props.tasksArr,this.state.value)
-                        this.clearInput()
-                }}>Add</div>
-            </div>
-        )
-    }
+    return(
+        <div className="goal_add">
+            <input 
+                onKeyDown={(e) => onEnterPress(e,() => {
+                props.addTask(props.tasksArr,value)
+                clearInput()
+            })}
+                onChange={(e) => inputValue(e)} 
+                type="text" className="goal_add-input" 
+                placeholder="Write a task..." 
+                value={value}/>
+            <div
+                className='goal_add-btn'
+                onClick={(e) => {
+                    props.addTask(e,value)
+                    clearInput()
+            }}>Add</div>
+        </div>
+    )
 }
 
 export default ToDoAdding
